@@ -357,16 +357,19 @@
     }
 
     .bottom-nav {
-      position: absolute;
+      position: fixed;
       bottom: 0;
-      left: 0;
-      right: 0;
+      left: 50%;
+      width: min(100%, 414px);
       height: 71px;
       background: #1b2736;
       display: flex;
       justify-content: space-around;
       align-items: center;
-      padding: 6px 16px 7px
+      padding: 6px 16px 7px;
+      box-sizing: border-box;
+      transform: translateX(-50%);
+      z-index: 10
     }
 
     .nav-item {
@@ -450,6 +453,10 @@
     .app.show-detail .detail-screen {
       display: block;
       animation: detail-in .3s ease both
+    }
+
+    .app.show-detail .bottom-nav {
+      display: none
     }
 
     .detail-topbar {
